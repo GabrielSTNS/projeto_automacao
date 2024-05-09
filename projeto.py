@@ -13,7 +13,7 @@ pyautogui.press('win')
 pyautogui.write('edge')
 pyautogui.press('enter')
 # time.sleep(1) # esperar 1 segundo para aplicar o click do mouse
-pyautogui.click(x=414, y=55)
+pyautogui.click(x=735, y=50)
 
 # entrar no link
 pyautogui.write('https://dlp.hashtagtreinamentos.com/python/intensivao/login')
@@ -21,7 +21,7 @@ pyautogui.press('enter')
 time.sleep(3)
 
 # fazer login na plataforma
-pyautogui.click(x=505, y=352)
+pyautogui.click(x=839, y=355)
 pyautogui.write('gabriel2000.santana@gmail.com')
 pyautogui.press('tab')
 pyautogui.write('12345')
@@ -34,11 +34,12 @@ import pandas as pd
 tabela = pd.read_csv('produtos.csv')
 
 for linha in tabela.index:
+    time.sleep(3)
     # pegar da tabela o valor do campo que a gente quer preencher
     codigo = tabela.loc[linha, 'codigo']
 
     # clicar no campo de código
-    pyautogui.click(x=524, y=245)
+    pyautogui.click(x=770, y=239)
 
     # preencher o campo
     pyautogui.write(str(codigo))
@@ -67,7 +68,9 @@ for linha in tabela.index:
     pyautogui.press('tab')
 
     # obs
-    pyautogui.write(str(tabela.loc[linha, 'obs']))
+    obs = tabela.loc[linha, 'obs']
+    if not pd.isna(obs):
+        pyautogui.write(str(tabela.loc[linha, 'obs']))
     pyautogui.press('tab')
 
     # clicar no botao de cadastrar
