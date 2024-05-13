@@ -1,7 +1,13 @@
-# pyautogui.write -> escrever um texto
-# pyautogui.press -> apertar 1 tecla
-# pyautogui.click -> clicar em algum lugar da tela
-# pyautogui.hotkey -> combinação de teclas
+"""
+pyautogui.write -> escrever um texto
+pyautogui.press -> apertar 1 tecla
+pyautogui.click -> clicar em algum lugar da tela
+pyautogui.hotkey -> combinação de teclas
+"""
+"""
+pyautogyu.click() => comando utilizado para clicar em algum lugar da tela de acordo com a posição informada (x,y), utilizar o arquivo *posicao.py* para pegar a posição de acordo com o seu monitor.  Abrir uma guia no navegador, rodar o código e posicionar o mouse em cima da barra de URL do navegador. Após isso, aguardar 5 segundos e voltar para o VSCode.
+"""
+
 
 import pyautogui
 import time
@@ -12,8 +18,7 @@ pyautogui.PAUSE = 0.3 # esperar 0.3 segundos entre cada ação feita pelo pyauto
 pyautogui.press('win')
 pyautogui.write('edge')
 pyautogui.press('enter')
-# time.sleep(1) # esperar 1 segundo para aplicar o click do mouse
-pyautogui.click(x=735, y=50)
+pyautogui.click(x=735, y=50) # barra de URL do navegador
 
 # entrar no link
 pyautogui.write('https://dlp.hashtagtreinamentos.com/python/intensivao/login')
@@ -21,7 +26,7 @@ pyautogui.press('enter')
 time.sleep(3)
 
 # fazer login na plataforma
-pyautogui.click(x=839, y=355)
+pyautogui.click(x=839, y=355) # formulário de login no site
 pyautogui.write('gabriel2000.santana@gmail.com')
 pyautogui.press('tab')
 pyautogui.write('12345')
@@ -39,7 +44,7 @@ for linha in tabela.index:
     codigo = tabela.loc[linha, 'codigo']
 
     # clicar no campo de código
-    pyautogui.click(x=770, y=239)
+    pyautogui.click(x=770, y=239) # formulário para inserir o código do produto
 
     # preencher o campo
     pyautogui.write(str(codigo))
@@ -75,4 +80,4 @@ for linha in tabela.index:
 
     # clicar no botao de cadastrar
     pyautogui.press('enter')
-    pyautogui.scroll(5000)
+    pyautogui.scroll(5000) # utilizado para usar o scroll (rodinha) do mouse e subir para o início da tela
